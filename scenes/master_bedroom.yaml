@@ -1,0 +1,11 @@
+- name: Netflix and Chill
+  entities:
+    light.right_bed_lamp:
+      state: on
+      transition: 2
+      brightness: 50
+      xy_color: [ 0.4448, 0.4066 ]
+    light.master_bedroom_fan_lights_level_6_0:
+      state: on
+      brightness: 50
+

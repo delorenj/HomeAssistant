@@ -1,0 +1,44 @@
+- alias: Sunset Lights On
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-00:05:00"
+  action:
+    - service: switch.turn_on
+      entity_id: switch.garage_spotlight_switch_19_0
+    - service: switch.turn_on
+      entity_id: switch.foyer_lamp_switch_9_0
+
+- alias: Lights Out
+  trigger:
+    platform: time
+    hours: 23
+    minutes: 0
+    seconds: 0
+  action:
+    - service: switch.turn_off
+      entity_id: switch.garage_spotlight_switch_19_0
+    - service: switch.turn_off
+      entity_id: switch.foyer_lamp_switch_9_0
+
+- alias: Weekday Sunrise Lights On
+  trigger:
+    platform: time
+    hours: 6
+    minutes: 10
+    seconds: 0
+  action:
+    - service: switch.turn_on
+      entity_id: switch.garage_spotlight_switch_19_0
+    - service: switch.turn_on
+      entity_id: switch.foyer_lamp_switch_9_0
+
+- alias: Weekday Sunrise Lights Off
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    - service: switch.turn_off
+      entity_id: switch.garage_spotlight_switch_19_0
+    - service: switch.turn_off
+      entity_id: switch.foyer_lamp_switch_9_0

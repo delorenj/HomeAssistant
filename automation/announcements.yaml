@@ -1,0 +1,17 @@
+######################################################################
+## Announce over all Chromecast Audios 
+######################################################################
+- alias: 'State Announcements'
+  
+  trigger:
+    - platform: state
+      entity_id:
+        - switch.foyer_lamp_switch_9_0
+      from: 'off'
+      to: 'on'
+      for: '00:02:00'
+      
+  action:
+    - service: script.Voice_notify
+      data_template:
+        value1: "{{ trigger.entity_id }} is {{ (trigger.to_state.state)|replace('_', ' ') }}"

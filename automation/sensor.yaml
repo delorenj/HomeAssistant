@@ -1,0 +1,16 @@
+##############################################################
+- alias: Basement Motion
+#  hide_entity: True
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.enerwave_zwnbpc_ceiling_mounted_pir_motion_sensor_sensor_5_0
+      state: 'on'
+     
+  action:
+    - service: light.turn_on
+      entity_id: 
+        - light.computer_lamp
+    - delay: 00:00:30
+    - service: light.turn_off
+      entity_id: light.computer_lamp
+

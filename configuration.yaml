@@ -1,0 +1,101 @@
+homeassistant:
+  name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 183
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  time_zone: America/New_York
+#  customize:
+#    - entity_id: binary_sensor.__sensor_3_0 
+#      friendly_name: Basement Sensor
+#    - entity_id: light.linear_wd500z1_wall_dimmer_switch_level_6_0
+#      friendly_name: Master Bedroom Fan Lights
+
+notify:
+  - name: notify
+    platform: pushbullet
+    api_key: !secret pushbullet_key
+
+cover:
+  platform: zwave
+
+frontend:
+  panel_iframe:
+    router:
+      title: 'Router'
+      url: 'http://192.168.1.1'
+
+http:
+#  api_password: !secret http_password
+#  base_url: !secret base_url
+#  login_attempts_threshold: 10
+#  trusted_networks:
+#    - 192.168.0.0/24
+#    - 127.0.0.1
+#    - ::1
+#  ip_ban_enabled: true
+#  cors_allowed_origins:
+#    - https://google.com
+#    - https://home-assistant.io
+#    - https://ifttt.com
+#    - http://google.com
+#    - http://192.168.1.219
+#    - https://192.168.1.219
+
+updater:
+discovery:
+conversation:
+history:
+logbook:
+sun:
+group: !include groups.yaml
+
+sensor: !include_dir_merge_list sensor
+
+tts:
+  platform: google
+
+mqtt:
+  broker: 127.0.0.1
+  port: 1883
+  client_id: home-assistant-1
+  username: pi
+  password: raspberry
+
+zwave:
+  usb_path: /dev/ttyUSB0
+  config_path: /home/homeassistant/.homeassistant/config/zwave_config
+
+light:
+  - platform: hue
+    host: 192.168.1.125
+    allow_unreachable: true
+    allow_in_emulated_hue: false
+    allow_hue_groups: false
+
+emulated_hue:
+  type: google_home
+  listen_port: 80
+  expose_by_default: true
+
+media_player:
+  - platform: cast
+    host: 192.168.1.53
+  - platform: cast
+    host: 192.168.1.28
+
+ifttt:
+  key: !secret ifttt_key
+
+device_tracker:
+  - platform: asuswrt
+    host: 192.168.1.1
+    username: delorenj
+    ssh_key: /home/homeassistant/.ssh/id_rsa
+
+automation: !include_dir_merge_list automation
+script: !include_dir_merge_list script
+scene: !include_dir_merge_list scenes
+
+

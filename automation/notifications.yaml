@@ -1,0 +1,26 @@
+  - alias: Notify Carrie is Home
+    trigger:
+      platform: state
+      entity_id: device_tracker.carrievesiphone
+      from: not_home
+      to: home
+      for:
+        minutes: 3
+    action:
+      service: notify.notify
+      data:
+        message: Carrie just arrived home
+ 
+  - alias: Notify Carrie left Home
+    trigger:
+      platform: state
+      entity_id: device_tracker.carrievesiphone
+      from: home
+      to: not_home
+      for:
+        minutes: 3
+    action:
+      service: notify.notify
+      data:
+        message: Carrie just left the house
+
