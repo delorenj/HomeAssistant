@@ -1,6 +1,7 @@
 Bedroom Lights:
   - light.master_bedroom_fan_lights_level_6_0
   - light.right_bed_lamp
+  - light.left_bed_lamp
   - scene.netflix_and_chill
 
 Speedtest:

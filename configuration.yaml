@@ -6,11 +6,15 @@ homeassistant:
   # metric for Metric, imperial for Imperial
   unit_system: imperial
   time_zone: America/New_York
-#  customize:
-#    - entity_id: binary_sensor.__sensor_3_0 
-#      friendly_name: Basement Sensor
-#    - entity_id: light.linear_wd500z1_wall_dimmer_switch_level_6_0
-#      friendly_name: Master Bedroom Fan Lights
+  customize:
+    switch.garage_spotlight_switch_19_0:
+      friendly_name: Garage Spotlight
+      icon: mdi:spotlight
+    switch.foyer_lamp_switch_9_0:
+      friendly_name: Foyer Lamp
+      icon: mdi:lamp
+    light.linear_wd500z1_wall_dimmer_switch_level_6_0:
+      friendly_name: Master Bedroom
 
 notify:
   - name: notify
