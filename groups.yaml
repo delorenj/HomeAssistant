@@ -1,5 +1,5 @@
 Bedroom Lights:
-  - light.master_bedroom_fan_lights_level_6_0
+  - light.linear_wd500z1_wall_dimmer_switch_level_6_0
   - light.right_bed_lamp
   - light.left_bed_lamp
   - scene.netflix_and_chill
@@ -8,3 +8,15 @@ Speedtest:
   - sensor.speedtest_ping
   - sensor.speedtest_download
   - sensor.speedtest_upload
+
+main_garage_door:
+  name: Garage doors
+  entities:
+    - cover.main_garage_door
+    - sensor.main_garage_door_status
+    - sensor.main_garage_door_time_in_state
+    - sensor.main_garage_door_wifi_signal_strength
+
+Outdoor Lighting:
+  - switch.garage_spotlight_switch_19_0
+  - switch.ge_12722_onoff_relay_switch_switch_4_0

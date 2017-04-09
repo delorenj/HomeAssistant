@@ -5,7 +5,7 @@
       transition: 2
       brightness: 30
       xy_color: [ 0.4448, 0.4066 ]
-    light.master_bedroom_ceiling:
+    light.linear_wd500z1_wall_dimmer_switch_level_6_0:
       state: on
-      brightness: 50
+      brightness: 40
 

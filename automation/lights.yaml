@@ -2,12 +2,13 @@
   trigger:
     platform: sun
     event: sunset
-    offset: "-00:05:00"
   action:
     - service: switch.turn_on
       entity_id: switch.garage_spotlight_switch_19_0
     - service: switch.turn_on
       entity_id: switch.foyer_lamp_switch_9_0
+    - service: switch.turn_on
+      entity_id: switch.ge_12722_onoff_relay_switch_switch_4_0
 
 - alias: Lights Out
   trigger:
@@ -20,6 +21,8 @@
       entity_id: switch.garage_spotlight_switch_19_0
     - service: switch.turn_off
       entity_id: switch.foyer_lamp_switch_9_0
+    - service: switch.turn_off
+      entity_id: switch.ge_12722_onoff_relay_switch_switch_4_0
 
 - alias: Weekday Sunrise Lights On
   trigger:
