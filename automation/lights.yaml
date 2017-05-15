@@ -3,8 +3,8 @@
     platform: sun
     event: sunset
   action:
-    - service: switch.turn_on
-      entity_id: switch.garage_spotlight_switch_19_0
+#    - service: switch.turn_on
+#      entity_id: switch.garage_spotlight_switch_19_0
     - service: switch.turn_on
       entity_id: switch.foyer_lamp_switch_9_0
     - service: switch.turn_on
@@ -17,8 +17,8 @@
     minutes: 0
     seconds: 0
   action:
-    - service: switch.turn_off
-      entity_id: switch.garage_spotlight_switch_19_0
+ #   - service: switch.turn_off
+ #     entity_id: switch.garage_spotlight_switch_19_0
     - service: switch.turn_off
       entity_id: switch.foyer_lamp_switch_9_0
     - service: switch.turn_off
