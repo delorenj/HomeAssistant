@@ -80,7 +80,7 @@ mqtt:
   password: raspberry
 
 zwave:
-  usb_path: /dev/ttyUSB0
+  usb_path: /dev/ttyUSB1
   config_path: /home/homeassistant/.homeassistant/config/zwave_config
 
 light:
